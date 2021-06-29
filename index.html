@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Charts</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100|Roboto:400,100&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body
+		{
+			background-color: lightgray;
+		}
+		.container
+		{
+			width: 60%;
+			margin: auto;
+			
+		}
+		.row
+		{
+			display: flex;
+			align-items: center;
+			border-radius: 9vw 0vw 15vw 9vw;
+			background:rgb(43, 43, 43);
+			margin: 5px;
+		}
+		.profile-img
+		{
+			width: 7vw;
+			height: 7vw;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.login
+		{
+			text-align: center;
+			font-size: 3vw;
+			padding-left: 1vw;
+			color: white;
+			font-family: 'Roboto';
+			font-weight: 100;
+			
+		}
+		.level
+		{
+			font-family: 'Montserrat';
+			color: lightgreen;
+			text-align: center;
+			margin-left: auto;
+			padding-right: 7vw;
+			font-size: 3vw;
+		}
+		.rank
+		{
+			font-size: 3vw;
+			padding: 0vw 1.5vw;
+			color: gold;
+			font-family: 'Roboto';
+		}
+	</style>
+</head>
+<body>
+	<script src="data.json"></script>
+	<script>
+		Object.keys(ranks).forEach(function (rank){
+			ranks[rank].forEach(function (student)
+			{
+				var login = student.login;
+				var level = student.level;
+				var row   =
+					`
+					<div class="container">
+						<div class="row">
+								<div class="rank"> ${rank} </div>
+								<div class="profile-img">
+								  <img class="profile-img" src="https://cdn.intra.42.fr/users/medium_${login}.jpg" alt="avatar">	  
+								</div>
+								<div class="login" >
+								  <div class="login" >${login}</div>
+								</div>
+							  <div class="level">${level}</div>
+						</div>
+					</div>
+					`
+				document.body.insertAdjacentHTML('beforeend',row)
+				
+			})
+			
+		})
+	</script>
+	
+</body>
+</html>
