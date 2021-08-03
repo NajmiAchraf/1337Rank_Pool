@@ -12,7 +12,7 @@ function getUsers(compus)
                     <div class="row">
                             <div class="rank"> ${rank} </div>
                             <div class="profile-img">
-                              <img class="profile-img" src="https://cdn.intra.42.fr/users/medium_${login}.jpg" alt="avatar">	  
+                              <img class="profile-img" src="./Charts/medium_${login}.jpg" alt="avatar">	  
                             </div>
                             <div class="login" >
                               <div class="login" >${login}</div>
